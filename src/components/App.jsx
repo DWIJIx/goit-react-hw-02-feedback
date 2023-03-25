@@ -15,21 +15,24 @@ export class App extends Component {
  
   increment = (name) => {
     console.log(name)
-  if (name === 'good') {
-      this.setState((prevState) => ({
-        good: prevState.good + 1
-      }));
-    }
-    if (name === 'neutral') {
-      this.setState((prevState) => ({
-        neutral: prevState.neutral +1
-      }));
-    }
-    if (name === 'bad') {
-      this.setState((prevState) => ({
-        bad: prevState.bad + 1,
-      }));
-    }
+    this.setState((prevState) => ({
+      [name]: prevState[name] + 1
+    }))
+  // if (name === 'good') {
+  //     this.setState((prevState) => ({
+  //       good: prevState.good + 1
+  //     }));
+  //   }
+  //   if (name === 'neutral') {
+  //     this.setState((prevState) => ({
+  //       neutral: prevState.neutral +1
+  //     }));
+  //   }
+  //   if (name === 'bad') {
+  //     this.setState((prevState) => ({
+  //       bad: prevState.bad + 1,
+  //     }));
+  //   }
 }
 
   countTotalFeedback = () => {
@@ -38,7 +41,7 @@ export class App extends Component {
     return totalFeedbacks;
   }
   countPositiveFeedbackPercentage = () => {
-        const positivPercentage = Math.round(this.state.good / this.countTotalFeedback() * 100) || 0
+    const positivPercentage = Math.round(this.state.good / this.countTotalFeedback() * 100) || 0
     return positivPercentage;
   }
 
