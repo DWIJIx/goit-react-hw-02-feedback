@@ -49,18 +49,9 @@ export class App extends Component {
     // const {good, neutral, bad} = this.state
     const options = Object.keys(this.state);
     return (
-   <Layout>
+    <Layout>
       <GlobalStyle/>
-      <div
-      style={{
-        height: '100vh',
-          // display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
+      <div>
         <Section title = {'Please, leave feedback'}>
            <FeedbackOptions options={options} onLeaveFeedback={this.increment}/>
         </Section>
